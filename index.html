@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="mortgage-calculator">
+        <div class="left">
+            <div class="header">
+                <h2>mortgage-calculator</h2>
+                <button id="clear-btn">clear All</button>
+            </div>
+            <form  id="mortgage-form">
+                <div class="form-item">
+                    <label class="light-text" 
+                    for="mortgage-amount">mortgage Amount</label>
+                    <div class="form-flex" id="mortgage-amount-main">
+                        <p class="form-symbol">$</p>
+                        <input type="number" id="mortgage-amount"
+                        name="mortgage-amount" required>
+                    </div>
+                    <p class="form-alert" id="amount-alert">
+                        this field is required
+                    </p>
+                </div>
+                <div class="form-item">
+                    <div class="form-col">
+                        <div class="form-item">
+                            <label class="light-text" 
+                            for="mortgage-term">mortgage Term</label>
+                            <div class="form-flex" id="mortgage-term-main">
+                                <p class="form-symbol">years</p>
+                                <input type="number" id="mortgage-term"
+                                name="mortgage-term" required>
+                            </div>
+                            <p class="form-alert" id="term-alert">
+                                this field is required
+                            </p>
+                        </div>
+                        <div class="form-item">
+                            <label class="light-text" 
+                            for="interest-rate">interest Rate</label>
+                            <div class="form-flex" id="interest-rate-main">
+                                <p class="form-symbol">%</p>
+                                <input type="number" id="interest-rate"
+                                name="interest-rate" step="0.01" required>
+                            </div>
+                            <p class="form-alert" id="rate-alert">
+                                this field is required
+                            </p>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+                <div class="form-item">
+                    <label  class="light-text"> Mortage type</label>
+
+                    <div class="radio-inputs">
+                        <input id="repayment" class="mortgage-type"
+                      type="radio" name="mortgage-type" value="repayment" required>
+                      <label for="repayment">Repayment</label>
+                    </div>
+                    <div class="radio-inputs">
+                        <input id="interest-only" class="mortgage-type"
+                      type="radio" name="mortgage-type" value="interest-only" required>
+                      <label for="interest-only">Interest Only</label>
+                    </div>
+                    <p class="form-alert" id="type-alert">this field is required</p>
+                </div>
+                <div class="form-item">
+                    <button type="button" id="calculate-btn" 
+                    class="calculate-btn" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="24"
+                     height="24"><path fill="#133041" d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7
+                          64-64l0-384c0-35.3-28.7-64-64-64L64 0zM96 64l192 0c17.7 0 32 14.3
+                           32 32l0 32c0 17.7-14.3 32-32 32L96 160c-17.7 0-32-14.3-32-32l0-32c0-17.7 
+                           14.3-32 32-32zm32 160a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM96 352a32 32 0 1 1 0-64 32 
+                           32 0 1 1 0 64zM64 416c0-17.7 14.3-32 32-32l96 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-96 0c-17.7 
+                           0-32-14.3-32-32zM192 256a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1
+                            64 0zm64-64a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64
+                         0zM288 448a32 32 0 1 1 0-64 32 32 0 1 1 0 64z"/></svg>
+                         Calculate Repayments
+                 </button>
+                </div>
+            </form>
+        </div>
+        <div class="right">
+            <div class="default-text" id="default-text">
+                <img src="illustration-empty.svg" alt="">
+                <h2>Results shown here</h2>
+                <p class="light-text"> Complete the form and click "calculate
+                    payements "to see what your mounthly repayements would be
+                </p>
+
+            </div>
+            <div class="calculations-container" id="calculations-container">
+                <h2>your results</h2>
+
+                <p class="light-text"> your results are shown below
+                  based on the information you provided. to adjust thz Results,
+                  edit the form and click" calculate repayments" again.  
+                </p>
+                <div class="calculations">
+                    <div class="monthly">
+                        <p class="light-text">
+                            your monthly Repayments
+                        </p>
+                        <span id="result" class="monthly-result"></span>
+                    </div>
+
+                    <div class="line">
+                        <div class="total-term">
+                            <p class="light-text">
+                                total you'll pay over the term
+                            </p>
+                            <span id="term-result" class="term-result"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
